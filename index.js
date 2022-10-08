@@ -46,8 +46,13 @@ function handleRetweetClick(tweetId){
     render() 
 }
 
+
 function handleReplyClick(replyId){
     document.getElementById(`replies-${replyId}`).classList.toggle('hidden')
+    const targetTweetObj = (tweetsData.filter(function(tweet){
+        return tweet.uuid === replyId
+    }))[0]
+    targetTweetObj.repliesVisible = !targetTweetObj.repliesVisible
 }
 
 function handleTweetBtnClick(){
@@ -73,7 +78,10 @@ function handleTweetBtnClick(){
 
 function getFeedHtml(){
     let feedHtml = ``
-    
+
+    // if (repliesVisible==false){
+    // }
+
     tweetsData.forEach(function(tweet){
         
         let likeIconClass = ''
@@ -93,55 +101,54 @@ function getFeedHtml(){
         if(tweet.replies.length > 0){
             tweet.replies.forEach(function(reply){
                 repliesHtml+=`
-<div class="tweet-reply">
-    <div class="tweet-inner">
-        <img src="${reply.profilePic}" class="profile-pic">
-            <div>
-                <p class="handle">${reply.handle}</p>
-                <p class="tweet-text">${reply.tweetText}</p>
-            </div>
-        </div>
-</div>
-`
+                <div class="tweet-reply">
+                    <div class="tweet-inner">
+                        <img src="${reply.profilePic}" class="profile-pic">
+                            <div>
+                                <p class="handle">${reply.handle}</p>
+                                <p class="tweet-text">${reply.tweetText}</p>
+                            </div>
+                        </div>
+                </div>
+                `
             })
         }
         
-          
         feedHtml += `
-<div class="tweet">
-    <div class="tweet-inner">
-        <img src="${tweet.profilePic}" class="profile-pic">
-        <div>
-            <p class="handle">${tweet.handle}</p>
-            <p class="tweet-text">${tweet.tweetText}</p>
-            <div class="tweet-details">
-                <span class="tweet-detail">
-                    <i class="fa-regular fa-comment-dots"
-                    data-reply="${tweet.uuid}"
-                    ></i>
-                    ${tweet.replies.length}
-                </span>
-                <span class="tweet-detail">
-                    <i class="fa-solid fa-heart ${likeIconClass}"
-                    data-like="${tweet.uuid}"
-                    ></i>
-                    ${tweet.likes}
-                </span>
-                <span class="tweet-detail">
-                    <i class="fa-solid fa-retweet ${retweetIconClass}"
-                    data-retweet="${tweet.uuid}"
-                    ></i>
-                    ${tweet.retweets}
-                </span>
-            </div>   
-        </div>            
-    </div>
-    <div class="hidden" id="replies-${tweet.uuid}">
-        ${repliesHtml}
-    </div>   
-</div>
-`
-   })
+                    <div class="tweet">
+                        <div class="tweet-inner">
+                            <img src="${tweet.profilePic}" class="profile-pic">
+                            <div>
+                                <p class="handle">${tweet.handle}</p>
+                                <p class="tweet-text">${tweet.tweetText}</p>
+                                <div class="tweet-details">
+                                    <span class="tweet-detail">
+                                        <i class="fa-regular fa-comment-dots"
+                                        data-reply="${tweet.uuid}"
+                                        ></i>
+                                        ${tweet.replies.length}
+                                    </span>
+                                    <span class="tweet-detail">
+                                        <i class="fa-solid fa-heart ${likeIconClass}"
+                                        data-like="${tweet.uuid}"
+                                        ></i>
+                                        ${tweet.likes}
+                                    </span>
+                                    <span class="tweet-detail">
+                                        <i class="fa-solid fa-retweet ${retweetIconClass}"
+                                        data-retweet="${tweet.uuid}"
+                                        ></i>
+                                        ${tweet.retweets}
+                                    </span>
+                                </div>   
+                            </div>            
+                        </div>
+                        <div class="${tweet.repliesVisible ? '' : 'hidden'}"  id="replies-${tweet.uuid}">
+                            ${repliesHtml}
+                        </div>   
+                    </div>
+                    `
+                    })
    return feedHtml 
 }
 
