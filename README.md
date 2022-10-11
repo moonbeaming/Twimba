@@ -2,10 +2,10 @@
 
 ## About Project
 
-This is a website I created with what I learnt from Scrimba's Frontend Career Path Course, using HTML, CSS, and vanilla Javascript. It provides pictures at random, from a couple of images provided by [Scrimba](https://scrimba.com/), matching whichever emotion you want the cat in the image to have. You can access the website [here](https://cat-image-picker.vercel.app/).
+This is a website I created with what I learnt from Scrimba's Frontend Career Path Course, using HTML, CSS, and vanilla Javascript. It is a Twitter clone, with a couple of core functionalities the actual app has. Assets are provided by [Scrimba](https://scrimba.com/). You can access the website [here]([https://cat-image-picker.vercel.app/](https://twimba.vercel.app/)).
 
 ## Features
-
+UPDATE THIS
 - Choose from a variety of emotions
 - Select whether you only want animated images/GIFs
 - Close the modal by clicking outside of it, as well as the usual default cross button
