@@ -1,13 +1,23 @@
-# coc524a08b125eb6e254997fb
+# Cat Image Picker
 
-## About Scrimba
+## About Project
 
-At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
-If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
-The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
+This is a website I created with what I learnt from Scrimba's Frontend Career Path Course, using HTML, CSS, and vanilla Javascript. It provides pictures at random, from a couple of images provided by [Scrimba](https://scrimba.com/), matching whichever emotion you want the cat in the image to have. You can access the website [here](https://cat-image-picker.vercel.app/).
 
-- [Our courses](https://scrimba.com/allcourses)
-- [The Frontend Career Path](https://scrimba.com/learn/frontend)
-- [Become a Scrimba Pro member](https://scrimba.com/pricing)
+## Features
 
-Happy Coding!
+- Choose from a variety of emotions
+- Select whether you only want animated images/GIFs
+- Close the modal by clicking outside of it, as well as the usual default cross button
+
+## Skills Used/Learned
+
+Through this project, I picked up essential Javascript concepts like how to use:
+- for... of loop
+- radio & checkbox inputs
+- querySelector
+- getElementsbyClassName
+- classList.remove
+- .includes()
+- .filter()
+
