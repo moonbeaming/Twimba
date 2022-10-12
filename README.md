@@ -1,7 +1,7 @@
 # Twimba, Twitter Clone
 ## About Project
 
-This is a website I created with what I learnt from Scrimba's Frontend Career Path Course, using HTML, CSS, and vanilla Javascript. It is a Twitter clone, with a couple of core functionalities the actual app has. Assets are provided by [Scrimba](https://scrimba.com/). You can access the website [here](https://restaurant-order-roan.vercel.app/).
+This is a website I created with what I learnt from Scrimba's Frontend Career Path Course, using HTML, CSS, and vanilla Javascript. It is a Twitter clone, with a couple of core functionalities the actual app has. Assets are provided by [Scrimba](https://scrimba.com/). You can access the website [here](https://twimba.vercel.app/).
 
 ## Features
 
